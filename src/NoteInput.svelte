@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<fieldset>
+<fieldset class="note-input">
    <legend>
       <slot name="legend"></slot>
    </legend> 
@@ -29,5 +29,7 @@
 		padding: 1em;
 		margin: auto;
 	}
-
+   .note-input {
+      margin: 0.5em;
+   }
 </style>

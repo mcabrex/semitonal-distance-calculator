@@ -15,7 +15,6 @@
 	$: note2Semitones = semitonalCalculator(octave2,letter2,alter2)
 
 	let total
-	let inputs = true
 	let semitonalCalculator = (octave,letter,alter) => {
 		let basicScale = 'C-D-EF-G-A-B';
 		let octaveTotal = +octave * 12
@@ -30,19 +29,18 @@
 	$: total = distanceCalculator(note1Semitones,note2Semitones)
 </script>
 
-<div>
-	<h1>Semitonal Distance Calculator</h1>
-	<p>Plug in note information to find the total number of semitones between two notes</p>
-	<p>**Note: the 'Alter' input field is used to describe the chromatic alteration of a note in semitones (e.g., -1 for flat, 1 for sharp)</p>
-	<h2>Semitonal Distance = {total}</h2>
+<h1>Semitonal Distance Calculator</h1>
+<p>Plug in note information to find the total number of semitones between two notes</p>
+<p>**Note: the 'Alter' input field is used to describe the chromatic alteration of a note in semitones (e.g., -1 for flat, 1 for sharp)</p>
+<h2>Semitonal Distance = {total}</h2>
 
+<div class="note-inputs">
 	<NoteInput>
 		<legend slot="legend">
 			Note 1
 		</legend>
-
 		<input type=number bind:value={octave1} min=0 name="octave" slot="octave"/>
-
+	
 		<select bind:value={letter1} slot="letter">
 			{#each musicalAlphabet as noteLetter}
 				<option value={noteLetter}>
@@ -50,17 +48,17 @@
 				</option>
 			{/each}			
 		</select>
-
+	
 		<input type=number bind:value={alter1} name="alter" slot="alter"/>
 	</NoteInput>
-
+	
 	<NoteInput>
 		<legend slot="legend">
 			Note 2
 		</legend>
-
+	
 		<input type=number bind:value={octave2} min=0 name="octave" slot="octave"/>
-
+	
 		<select bind:value={letter2} slot="letter">
 			{#each musicalAlphabet as noteLetter}
 				<option value={noteLetter}>
@@ -68,7 +66,7 @@
 				</option>
 			{/each}			
 		</select>
-
+	
 		<input type=number bind:value={alter2} name="alter" slot="alter"/>
 	</NoteInput>
 </div>
@@ -78,5 +76,9 @@
 		background-color: rgb(51, 169, 238);
 		text-align: center;
 	}
+	.note-inputs {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
 </style>
-
