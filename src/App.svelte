@@ -14,12 +14,18 @@
 	$: note2 = `${octave2 + letter2 + alter2}`
 	$: note2Semitones = semitonalCalculator(octave2,letter2,alter2)
 
-	let total
 	let semitonalCalculator = (octave,letter,alter) => {
-		let basicScale = 'C-D-EF-G-A-B';
-		let octaveTotal = +octave * 12
-		let letterTotal = basicScale.indexOf(letter)
-		return (octaveTotal+letterTotal+alter)
+		let baseScale = 'C-D-EF-G-A-B';
+        //used to determine a value for the letter, in calculating semitonal distance it is important that the baseScale used for each note is the same
+
+		let octaveTotal = octave * 12
+        //12 semitones in an octave
+
+		let letterTotal = baseScale.indexOf(letter)
+        //letter value in semitones
+        
+        let semitonalTotal = octaveTotal+letterTotal+alter
+		return semitonalTotal
 	}
 
 	let distanceCalculator = (noteTotal1,noteTotal2) => {
@@ -73,7 +79,6 @@
 
 <style>
 	:global(body){
-		background-color: rgb(51, 169, 238);
 		text-align: center;
 	}
 	.note-inputs {
