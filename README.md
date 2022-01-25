@@ -1,15 +1,15 @@
-# Semitonal Distance Calculator
+# 🎵 Semitonal Distance Calculator 🎵
 
 See it live at https://semitonal-distance.surge.sh/
 
-## Purpose 
+## Purpose
 The Semitonal Calculator is a straightforward static website with a singular purpose: to calculate the amount of semitones leading up to a note from 0.
 
-## What is a semitone?
+## What is a semitone? 
 
 A semitone, aka a half-step, is the smallest interval used in classical Western music, equal to a twelfth of an octave.
 
-## Context
+## Context 📚
 
 In Western music theory the pitch of every note is defined by three qualities: the note's octave, letter, and alter.
 
@@ -21,7 +21,7 @@ In Western music theory the pitch of every note is defined by three qualities: t
 
 Note that there are only 7 letters in an octave but 12 semitones that make up that octave. In a base scale without sharps or flats the semitones of an octave that aren't decided by the letter are done with chromatic alterations following this pattern: *"A-BC-D-EF-G-"*. The dashes represent the chromatic alteration and are usually assigned a sharp (♯) or flat (♭) symbol depending on the context. 
 
-## How It Works
+## How It Works ⚙️
 
 The basic idea behind this calculator is to caculate the total number of semitones in two separate notes and then return the difference between them with an absolute value.
 
