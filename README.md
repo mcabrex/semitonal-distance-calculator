@@ -32,16 +32,16 @@ This is the basic function I created to find the total number of semitones in an
 ```
 	function semitonalCalculator(octave,letter,alter){
 		let baseScale = 'C-D-EF-G-A-B';
-        //used to determine a value for the letter
+		//used to determine a value for the letter
 		//in calculating semitonal distance it is important that the baseScale used for each note is the same
 
 		let octaveTotal = octave * 12
-        //12 semitones in an octave
+		//12 semitones in an octave
 
 		let letterTotal = basicScale.indexOf(letter)
-        //letter value in semitones
+		//letter value in semitones
         
-        let semitonalTotal = octaveTotal+letterTotal+alter
+		let semitonalTotal = octaveTotal+letterTotal+alter
 		return semitonalTotal
 	}
 ```
