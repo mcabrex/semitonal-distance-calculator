@@ -16,7 +16,8 @@
 
 	let semitonalCalculator = (octave,letter,alter) => {
 		let baseScale = 'C-D-EF-G-A-B';
-        //used to determine a value for the letter, in calculating semitonal distance it is important that the baseScale used for each note is the same
+        //used to determine a value for the letter
+		//in calculating semitonal distance it is important that the baseScale used for each note is the same
 
 		let octaveTotal = octave * 12
         //12 semitones in an octave
@@ -38,16 +39,17 @@
 <h1>Semitonal Distance Calculator</h1>
 <p>Plug in note information to find the total number of semitones between two notes</p>
 <p>**Note: the 'Alter' input field is used to describe the chromatic alteration of a note in semitones (e.g., -1 for flat, 1 for sharp)</p>
-<h2>Semitonal Distance = {total}</h2>
+<h2 class="semitonal-total">Semitonal Distance = {total}</h2>
 
 <div class="note-inputs">
 	<NoteInput>
-		<legend slot="legend">
+		<legend slot="legend" class="input-legend">
 			Note 1
 		</legend>
-		<input type=number bind:value={octave1} min=0 name="octave" slot="octave"/>
+
+		<input type=number bind:value={octave1} min=0 name="octave" slot="octave" class="input-field"/>
 	
-		<select bind:value={letter1} slot="letter">
+		<select bind:value={letter1} slot="letter" class="input-field">
 			{#each musicalAlphabet as noteLetter}
 				<option value={noteLetter}>
 					{noteLetter}
@@ -55,17 +57,17 @@
 			{/each}			
 		</select>
 	
-		<input type=number bind:value={alter1} name="alter" slot="alter"/>
+		<input type=number bind:value={alter1} name="alter" slot="alter" class="input-field"/>
 	</NoteInput>
 	
 	<NoteInput>
-		<legend slot="legend">
-			Note 2
+		<legend slot="legend" class="input-legend">
+			Note 1
 		</legend>
 	
-		<input type=number bind:value={octave2} min=0 name="octave" slot="octave"/>
+		<input type=number bind:value={octave2} min=0 name="octave" slot="octave" class="input-field"/>
 	
-		<select bind:value={letter2} slot="letter">
+		<select bind:value={letter2} slot="letter" class="input-field">
 			{#each musicalAlphabet as noteLetter}
 				<option value={noteLetter}>
 					{noteLetter}
@@ -73,7 +75,7 @@
 			{/each}			
 		</select>
 	
-		<input type=number bind:value={alter2} name="alter" slot="alter"/>
+		<input type=number bind:value={alter2} name="alter" slot="alter" class="input-field"/>
 	</NoteInput>
 </div>
 
@@ -81,9 +83,24 @@
 	:global(body){
 		text-align: center;
 	}
+	.semitonal-total {
+		color: rgb(209, 14, 14);
+	}
 	.note-inputs {
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
+	}
+	.input-field {
+		margin: 0.5em 0;
+		border-radius: 2em;
+		text-align: center;
+		border-color: black;
+	}
+	.input-legend {
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.5em;
+		font-family: Arial;
 	}
 </style>

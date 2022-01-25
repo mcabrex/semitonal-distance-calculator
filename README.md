@@ -1,5 +1,7 @@
 # Semitonal Distance Calculator
 
+See it live at https://semitonal-distance.surge.sh/
+
 ## Purpose 
 The Semitonal Calculator is a straightforward static website with a singular purpose: to calculate the amount of semitones leading up to a note from 0.
 
@@ -17,7 +19,7 @@ In Western music theory the pitch of every note is defined by three qualities: t
 
 **The Alter** The Alter represents the chromatic alteration of a note in semitones (e.g., -1 for flat, 1 for sharp)
 
-Note that there are only 7 letters in an octave but 12 semitones that make up that octave. In a base scale without sharps or flats the semitones of an octave that aren't decided by just the letter are done with chromatic alterations following this pattern: *"A-BC-D-EF-G-"*. The dashes represent the chromatic alteration and are usually assigned a sharp (♯) or flat (♭) symbol depending on the context. 
+Note that there are only 7 letters in an octave but 12 semitones that make up that octave. In a base scale without sharps or flats the semitones of an octave that aren't decided by the letter are done with chromatic alterations following this pattern: *"A-BC-D-EF-G-"*. The dashes represent the chromatic alteration and are usually assigned a sharp (♯) or flat (♭) symbol depending on the context. 
 
 ## How It Works
 
@@ -30,7 +32,8 @@ This is the basic function I created to find the total number of semitones in an
 ```
 	function semitonalCalculator(octave,letter,alter){
 		let baseScale = 'C-D-EF-G-A-B';
-        //used to determine a value for the letter, in calculating semitonal distance it is important that the baseScale used for each note is the same
+        //used to determine a value for the letter
+		//in calculating semitonal distance it is important that the baseScale used for each note is the same
 
 		let octaveTotal = octave * 12
         //12 semitones in an octave
@@ -43,6 +46,6 @@ This is the basic function I created to find the total number of semitones in an
 	}
 ```
 
-Then to find the semitonal distance between each note you simply have return the difference between the total amount of semitones of each note.
+Then to find the semitonal distance between two different notes you simply find the difference between the total amount of semitones of each note.
 
 

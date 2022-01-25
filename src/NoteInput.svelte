@@ -1,35 +1,38 @@
 <script>
 </script>
 
-<fieldset class="note-input">
-   <legend>
-      <slot name="legend"></slot>
-   </legend> 
-
-   <label for="octave">
+<fieldset class="note-inputs">
+   <slot name="legend">
+      <legend>Note Inputs</legend>
+   </slot>
+   			 
+   <label for="octave" class="input-title">
       Octave
-      <slot name="octave"></slot>
    </label>
+   <slot name="octave" class="input-octave"></slot>
 
-   <label for="letter">
+   <label for="letter" class="input-title">
       Letter
-      <slot name="letter"></slot>
    </label>
-
-   <label for="alter">
+   <slot name="letter"></slot>
+	
+   <label for="alter" class="input-title">
       Alter
-      <slot name="alter"></slot>
    </label>
+   <slot name="alter"></slot>
 </fieldset>
 
 <style>
-   fieldset {
-		width: fit-content;
-		background-color: white;
-		padding: 1em;
-		margin: auto;
+  .note-inputs {
+		 width: fit-content;
+		 margin: 0.5em;
+		 padding: 1em;
+		 grid-template-columns: [label] 30% [input] 70%;
+		 grid-template-rows: [octave] 33% [letter] 33% [alter] 33%;
+		 display: grid;
+  }
+	.input-title {
+		align-self: center;
+		margin: 0.5em 0;
 	}
-   .note-input {
-      margin: 0.5em;
-   }
 </style>
