@@ -2,8 +2,8 @@
 
 See it live at https://semitonal-distance.surge.sh/
 
-## Purpose
-The Semitonal Calculator is a straightforward static website with a singular purpose: to calculate the amount of semitones leading up to a note from 0.
+## Usage
+The Semitonal Calculator is a straightforward website with a singular purpose: to calculate the amount of semitones leading up to a note from 0.
 
 ## What is a semitone? 
 
